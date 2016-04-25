@@ -3,7 +3,7 @@ import {Map, List} from 'immutable';
 function setQueryString(state, queryString) {
   return state
       .set('queryString', queryString)
-      .set('suggestions', state.get('repositories')
+      .set('suggestions', state.get('repositories', List())
           .filter(repo => (new RegExp('^' + queryString)).test(repo.name))
           .sortBy(repo => repo.stargazers_count)
           .take(3)
