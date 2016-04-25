@@ -18,7 +18,7 @@ class GithubSearch extends React.Component {
         } = this.props;
 
 
-        const dataSource = suggestions.isEmpty() ? [] : suggestions.map(suggestion => {return {
+        const dataSource = suggestions.map(suggestion => {return {
             text: suggestion.name,
             value: (
                 <Suggestion
@@ -28,9 +28,9 @@ class GithubSearch extends React.Component {
         }}).toJS();
 
         return (
-            <div>
+            <div className="app">
                 <AutoComplete
-                    floatingLabelText="Find in: reactjs"
+                    floatingLabelText="React Community"
                     filter={AutoComplete.noFilter}
                     triggerUpdateOnFocus
                     fullWidth
